@@ -52,6 +52,11 @@ int Character::move()
 {
 	
 }
+// used if gun is found
+void Character::setDamage(int damage)
+{
+	this->damage = damage;
+}
 
 // Doesn't let shield go below min or above max
 void Character::setShield(int shield)
