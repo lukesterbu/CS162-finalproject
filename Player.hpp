@@ -15,6 +15,12 @@
 class Player : public Character
 {
 	private:
+		int maxHp;
+		int maxShield;
+		int maxAmmo;
+		int minHp;
+		int minShield;
+		int minAmmo;
 		std::vector<Items*> backpack;
 	public:
 		Player();
