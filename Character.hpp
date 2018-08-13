@@ -36,6 +36,8 @@ class Character
 		void setHp(int);
 		int getHp();
 		std::string getType(); // returns type
+		int getMaxHp();
+		int getMaxShield();
 };
 
 #endif
