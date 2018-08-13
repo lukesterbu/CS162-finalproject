@@ -15,3 +15,8 @@ Cure::~Cure()
 {
 
 }
+
+void Cure::use(Character* person)
+{
+	
+}
