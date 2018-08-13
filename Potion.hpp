@@ -1,7 +1,7 @@
 /**********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description: Potion class declaration
+** Description:	Potion class declaration
 **********************************************************************/
 
 #ifndef POTION_HPP
