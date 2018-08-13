@@ -5,13 +5,17 @@
 **********************************************************************/
 
 #include "Gun.hpp"
+#include "Character.hpp"
 
 Gun::Gun()
 {
-
+	gunDmg = 25;
 }
 
 Gun::~Gun()
-{
+{}
 
+void Gun::use(Character* person)
+{
+	person->setDamage(gunDmg);	
 }
