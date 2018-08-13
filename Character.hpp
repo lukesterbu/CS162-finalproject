@@ -18,6 +18,7 @@ class Character
 		int defNum; // how many defense die faces
 		int shield; 
 		int hp; // hit points
+		bool infected; // true if infected false otherwise
 		std::string type; // used for character name
 	public:
 		Character();
