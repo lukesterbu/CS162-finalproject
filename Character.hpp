@@ -12,10 +12,8 @@
 class Character
 {
 	protected:
-		int atkDie; // how many attack dies
-		int defDie; // how many defense dies
-		int atkNum; // how many attack die faces
-		int defNum; // how many defense die faces
+		int damage; // damage
+		int range; // attack range
 		int shield; 
 		int hp; // hit points
 		bool infected; // true if infected false otherwise
