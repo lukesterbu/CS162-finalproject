@@ -7,6 +7,8 @@
 #include "Gun.hpp"
 #include "Character.hpp"
 
+// until everything works gun should have unlimited ammo
+
 Gun::Gun()
 {
 	gunDmg = 25;
