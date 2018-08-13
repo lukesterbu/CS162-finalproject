@@ -16,6 +16,7 @@ Character::Character()
 	defNum = 0;
 	shield = 0;
 	hp = 0;
+	infected = false;
 	type = "Character";
 }
 
