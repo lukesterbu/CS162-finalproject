@@ -9,7 +9,7 @@
 
 class Character
 {
-	private:
+	protected:
 		int hp;
 		int shield;
 	public:
