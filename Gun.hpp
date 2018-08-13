@@ -12,9 +12,11 @@
 class Gun : public Items
 {
 	private:
+		int gunDmg; // gun damage
 	public:
 		Gun();
 		~Gun();
+		void use();
 };
 
 #endif
