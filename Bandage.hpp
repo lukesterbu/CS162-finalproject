@@ -8,6 +8,7 @@
 #define BANDAGE_HPP
 
 #include "Items.hpp"
+#include "Character.hpp"
 
 class Bandage : public Items
 {
@@ -16,7 +17,7 @@ class Bandage : public Items
 	public:
 		Bandage();
 		~Bandage();
-		void move();
+		void use(Character*);
 };
 
 #endif
