@@ -1,7 +1,7 @@
 /**********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description: Gun class definition
+** Description:	Gun class definition
 **********************************************************************/
 
 #include "Gun.hpp"
