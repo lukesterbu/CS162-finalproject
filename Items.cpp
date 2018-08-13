@@ -15,10 +15,9 @@ Items::Items()
 	type = "Item";
 }
 
+// Never actually creating an item
 Items::~Items()
-{
-
-}
+{}
 
 string Items::getType()
 {
