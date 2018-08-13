@@ -6,12 +6,21 @@
 
 #include "Items.hpp"
 
+#include <string>
+
+using std::string;
+
 Items::Items()
 {
-
+	type = "Item";
 }
 
 Items::~Items()
 {
 
+}
+
+string Items::getType()
+{
+	return type;
 }
