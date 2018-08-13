@@ -31,6 +31,7 @@ class Character
 		~Character();
 		virtual int attack();
 		virtual int defense(int);
+		void setShield(int);
 		int getShield();
 		void setHp(int);
 		int getHp();
