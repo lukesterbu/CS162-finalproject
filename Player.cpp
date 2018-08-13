@@ -16,6 +16,12 @@ Player::Player()
 	hp = 100;
 	infected = false;
 	type = "Player";
+	maxHp = 100;
+	maxShield = 100;
+	maxAmmo = 1000;
+	minHp = 0;
+	minShield = 0;
+	minAmmo = 0;
 }
 
 Player::~Player()
