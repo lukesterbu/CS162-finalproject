@@ -8,6 +8,7 @@
 #define SHIELD_HPP
 
 #include "Items.hpp"
+#include "Character.hpp"
 
 class Shield : public Items
 {
@@ -15,6 +16,7 @@ class Shield : public Items
 	public:
 		Shield();
 		~Shield();
+		void use(Character*);
 };
 
 #endif
