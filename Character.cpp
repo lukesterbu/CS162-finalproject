@@ -47,6 +47,12 @@ int Character::defense(int attack)
 	// apply remainder to hp
 	setHp(hp - overShield);
 }
+
+int Character::move()
+{
+	
+}
+
 // Doesn't let shield go below min or above max
 void Character::setShield(int shield)
 {
