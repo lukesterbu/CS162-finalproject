@@ -1,17 +1,17 @@
 /**********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description:	Potion class definition
+** Description:	Bandage class definition
 **********************************************************************/
 
-#include "Potion.hpp"
+#include "Bandage.hpp"
 
-Potion::Potion()
+Bandage::Bandage()
 {
 
 }
 
-Potion::~Potion()
+Bandage::~Bandage()
 {
 
 }
