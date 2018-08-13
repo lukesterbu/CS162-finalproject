@@ -10,10 +10,12 @@
 #include "Character.hpp"
 #include "Items.hpp"
 
+#include <vector>
+
 class Player : public Character
 {
 	private:
-		vector<Items*> backpack;
+		std::vector<Items*> backpack;
 	public:
 		Player();
 		~Player();
