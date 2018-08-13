@@ -13,7 +13,7 @@
 class Bandage : public Items
 {
 	private:
-		int hp;
+		int bandage;
 	public:
 		Bandage();
 		~Bandage();
