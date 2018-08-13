@@ -8,9 +8,12 @@
 #define PLAYER_HPP
 
 #include "Character.hpp"
+#include "Items.hpp"
 
 class Player : public Character
 {
+	private:
+		vector<Items*> backpack;
 	public:
 		Player();
 		~Player();
