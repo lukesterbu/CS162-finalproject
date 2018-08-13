@@ -13,7 +13,7 @@ Shield::Shield()
 
 Shield::~Shield()
 {
-
+	delete (*this);
 }
 
 void Shield::use(Character* person)
