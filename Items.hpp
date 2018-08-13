@@ -9,7 +9,13 @@
 
 class Items
 {
-	private:
+	protected:
+		int maxHp = 100;
+		int maxShield = 100;
+		int maxAmmo = 1000;
+		int minHp = 0;
+		int minShield = 0;
+		int minAmmo = 0;
 	public:
 		Items();
 		~Items();
