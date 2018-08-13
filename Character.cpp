@@ -29,12 +29,23 @@ Character::~Character()
 
 int Character::attack()
 {
-	
+	// incorporate range and damage here
 }
 // Calculates damage done
-int Character::defense()
+int Character::defense(int attack)
 {
+	int overShield = 0;
+	// check shield and then hp
+	if (attack > shield)
+	{
+		overShield = attack - shield;
+		setShield(minShield);
+	}
+	else if (attack <= shield)
+		setShield(shield - attack);
 	
+	// apply remainder to hp
+	setHp(hp - overShield);
 }
 // Doesn't let shield go below min or above max
 void Character::setShield(int shield)
