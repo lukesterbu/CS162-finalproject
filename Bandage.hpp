@@ -4,17 +4,17 @@
 ** Description:	Potion class declaration
 **********************************************************************/
 
-#ifndef POTION_HPP
-#define POTION_HPP
+#ifndef BANDAGE_HPP
+#define BANDAGE_HPP
 
 #include "Items.hpp"
 
-class Potion : public Items
+class Bandage : public Items
 {
 	private:
 	public:
-		Potion();
-		~Potion();
+		Bandage();
+		~Bandage();
 };
 
 #endif
