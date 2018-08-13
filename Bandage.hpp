@@ -16,6 +16,7 @@ class Bandage : public Items
 	public:
 		Bandage();
 		~Bandage();
+		void move();
 };
 
 #endif
