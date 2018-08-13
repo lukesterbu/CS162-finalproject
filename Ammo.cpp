@@ -8,10 +8,15 @@
 
 Ammo::Ammo()
 {
-
+	type = "Ammo";
 }
 
 Ammo::~Ammo()
 {
 
+}
+
+void Ammo::use(Character* person)
+{
+	
 }
