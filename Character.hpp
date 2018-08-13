@@ -30,6 +30,7 @@ class Character
 		virtual int attack();
 		virtual int defense(int);
 		virtual void move();
+		void setDamage(int); // used if gun is found
 		void setShield(int);
 		int getShield();
 		void setHp(int);
