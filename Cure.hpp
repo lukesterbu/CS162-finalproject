@@ -8,6 +8,7 @@
 #define CURE_HPP
 
 #include "Items.hpp"
+#include "Character.hpp"
 
 class Cure : public Items
 {
@@ -15,6 +16,7 @@ class Cure : public Items
 	public:
 		Cure();
 		~Cure();
+		void use(Character*);
 };
 
 #endif
