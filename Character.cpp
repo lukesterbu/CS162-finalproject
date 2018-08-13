@@ -51,6 +51,16 @@ int Character::defense(int attack)
 	return defense;
 }
 
+void Character::setShield(int shield)
+{
+	if (shield >= maxShield)
+		this->shield = maxShield;
+	else if (shield <= minShield)
+		this->shield = minShield;
+	else
+		this->shield = shield;
+}
+
 int Character::getShield()
 {
 	return shield;
@@ -58,8 +68,8 @@ int Character::getShield()
 // Doesn't let strength go below 0
 void Character::setHp(int difference)
 {
-	if (hp - difference < 0)
-		hp = 0;
+	if (hp - difference < minHp)
+		hp = minHp;
 	else 
 		hp -= difference;
 }
