@@ -10,12 +10,6 @@
 class Items
 {
 	protected:
-		int maxHp;
-		int maxShield;
-		int maxAmmo;
-		int minHp;
-		int minShield;
-		int minAmmo;
 	public:
 		Items();
 		~Items();
