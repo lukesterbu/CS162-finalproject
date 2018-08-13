@@ -8,6 +8,7 @@
 
 Bandage::Bandage()
 {
+	type = "Bandage";
 	bandage = 15;
 }
 
