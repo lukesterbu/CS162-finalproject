@@ -1,7 +1,7 @@
 /**********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description: Shield class declaration
+** Description:	Shield class declaration
 **********************************************************************/
 
 #ifndef SHIELD_HPP
