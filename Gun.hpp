@@ -11,6 +11,7 @@
 
 class Gun : public Items
 {
+	// until everything works gun should have unlimited ammo
 	private:
 		int gunDmg; // gun damage
 	public:
