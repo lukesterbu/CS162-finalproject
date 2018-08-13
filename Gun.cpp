@@ -16,7 +16,9 @@ Gun::Gun()
 }
 
 Gun::~Gun()
-{}
+{
+	delete (*this);
+}
 
 void Gun::use(Character* person)
 {
