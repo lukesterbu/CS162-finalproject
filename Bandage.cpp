@@ -8,18 +8,20 @@
 
 Bandage::Bandage()
 {
-	int heal = 15;
+	bandage = 15;
 }
 
 Bandage::~Bandage()
-{}
-
+{
+	delete (*this);
+}
+// Uses a bandage to increase character's health
 void Bandage::use(Character* person)
 {
 	int currentHp = person.getHp();
 	
-	if ((currentHp + heal) > maxHp)
-		person->setHp(maxHp)
+	if ((currentHp + bandage) >= person.=getMaxHp())
+		person->setHp(person.getMaxHp());
 	else
-		person->setHp(currentHp + heal);
+		person->setHp(currentHp + bandage);
 }
