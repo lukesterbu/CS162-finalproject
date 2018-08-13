@@ -6,7 +6,7 @@
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
-
+//might want to just use character class from project3
 class Character
 {
 	protected:
