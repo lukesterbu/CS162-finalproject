@@ -8,6 +8,7 @@
 
 Shield::Shield()
 {
+	type = "Shield";
 	shield = 50;
 }
 
