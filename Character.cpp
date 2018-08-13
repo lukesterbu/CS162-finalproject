@@ -1,7 +1,7 @@
 /***********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description: Abstract class Character definition
+** Description:	Character class definition
 ***********************************************************************/
 
 #include "Character.hpp"
@@ -14,8 +14,8 @@ Character::Character()
 	defDie = 0;
 	atkNum = 0;
 	defNum = 0;
-	armor = 0;
-	strength = 0;
+	shield = 0;
+	hp = 0;
 	type = "Character";
 }
 
@@ -40,32 +40,32 @@ int Character::defense(int attack)
 	{
 		defense += rand() % (defNum - 1 + 1) + 1;
 	}
-	if ((defense + armor) >= attack)
+	if ((defense + shield) >= attack)
 		difference = 0;
 	else
-		difference = attack - defense - armor;
+		difference = attack - defense - shield;
 	
-	setStrength(difference);
+	setHp(difference);
 	
 	return defense;
 }
 
-int Character::getArmor()
+int Character::getShield()
 {
-	return armor;
+	return shield;
 }
 // Doesn't let strength go below 0
-void Character::setStrength(int difference)
+void Character::setHp(int difference)
 {
-	if (strength - difference < 0)
-		strength = 0;
+	if (hp - difference < 0)
+		hp = 0;
 	else 
-		strength -= difference;
+		hp -= difference;
 }
 
-int Character::getStrength()
+int Character::getHp()
 {
-	return strength;
+	return hp;
 }
 
 string Character::getType()
