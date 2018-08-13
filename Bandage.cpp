@@ -20,7 +20,7 @@ void Bandage::use(Character* person)
 {
 	int currentHp = person.getHp();
 	
-	if ((currentHp + bandage) >= person.=getMaxHp())
+	if ((currentHp + bandage) >= person.getMaxHp())
 		person->setHp(person.getMaxHp());
 	else
 		person->setHp(currentHp + bandage);
