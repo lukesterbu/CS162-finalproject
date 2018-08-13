@@ -20,6 +20,12 @@ class Character
 		int hp; // hit points
 		bool infected; // true if infected false otherwise
 		std::string type; // used for character name
+		int maxHp;
+		int maxShield;
+		int maxAmmo;
+		int minHp;
+		int minShield;
+		int minAmmo;
 	public:
 		Character();
 		~Character();
