@@ -11,6 +11,7 @@
 
 Gun::Gun()
 {
+	type = "Gun";
 	gunDmg = 25;
 }
 
