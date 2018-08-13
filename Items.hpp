@@ -12,7 +12,8 @@ class Items
 	private:
 	public:
 		Items();
-		~Items()
+		~Items();
+		virtual void use() = 0;
 };
 
 #endif
