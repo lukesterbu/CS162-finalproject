@@ -1,7 +1,7 @@
 /**********************************************************************
 ** Author:	Luke Burris
 ** Date:	8/13/2018
-** Description: Gun class declaration
+** Description:	Gun class declaration
 **********************************************************************/
 
 #ifndef GUN_HPP
