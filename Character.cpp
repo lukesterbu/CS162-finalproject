@@ -10,10 +10,8 @@ using std::string;
 
 Character::Character()
 {
-	atkDie = 0;
-	defDie = 0;
-	atkNum = 0;
-	defNum = 0;
+	damage = 0;
+	range = 0;
 	shield = 0;
 	hp = 0;
 	infected = false;
@@ -31,32 +29,14 @@ Character::~Character()
 
 int Character::attack()
 {
-	int attack = 0;
-	for (int i = 0; i < atkDie; i++)
-	{
-		attack += rand() % (atkNum - 1 + 1) + 1;
-	}
-	return attack;
+	
 }
 // Calculates damage done
-int Character::defense(int attack)
+int Character::defense()
 {
-	int defense = 0;
-	int difference = 0;
-	for (int i = 0; i < defDie; i++)
-	{
-		defense += rand() % (defNum - 1 + 1) + 1;
-	}
-	if ((defense + shield) >= attack)
-		difference = 0;
-	else
-		difference = attack - defense - shield;
 	
-	setHp(difference);
-	
-	return defense;
 }
-
+// Doesn't let shield go below min or above max
 void Character::setShield(int shield)
 {
 	if (shield >= maxShield)
@@ -71,13 +51,15 @@ int Character::getShield()
 {
 	return shield;
 }
-// Doesn't let strength go below 0
-void Character::setHp(int difference)
+// Doesn't let hp go below min or above max
+void Character::setHp(int hp)
 {
-	if (hp - difference < minHp)
-		hp = minHp;
-	else 
-		hp -= difference;
+	if (hp >= maxHp)
+		this->hp = maxShield;
+	else if (hp <= minHp)
+		this->hp = minHp;
+	else
+		this->hp = hp;
 }
 
 int Character::getHp()
