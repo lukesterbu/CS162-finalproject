@@ -6,8 +6,6 @@
 
 #include "Character.hpp"
 
-using std::cout;
-using std::endl;
 using std::string;
 
 Character::Character()
