@@ -13,7 +13,7 @@ Ammo::Ammo()
 
 Ammo::~Ammo()
 {
-
+	delete (*this);
 }
 
 void Ammo::use(Character* person)
