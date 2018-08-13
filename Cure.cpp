@@ -8,7 +8,7 @@
 
 Cure::Cure()
 {
-
+	type = "Cure";
 }
 
 Cure::~Cure()
