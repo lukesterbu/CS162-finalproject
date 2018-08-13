@@ -93,3 +93,14 @@ string Character::getType()
 {
 	return type;
 }
+
+int Character::getMaxHp()
+{
+	return maxHp;
+}
+
+int Character::getMaxShield()
+{
+	return maxShield;
+}
+			
