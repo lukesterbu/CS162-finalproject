@@ -13,6 +13,7 @@
 class Shield : public Items
 {
 	private:
+		int shield;
 	public:
 		Shield();
 		~Shield();
