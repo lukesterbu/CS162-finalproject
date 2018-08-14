@@ -8,6 +8,7 @@
 #define GUN_HPP
 
 #include "Items.hpp"
+#include "Character.hpp"
 
 class Gun : public Items
 {
@@ -17,7 +18,7 @@ class Gun : public Items
 	public:
 		Gun();
 		~Gun();
-		void use();
+		void use(Character*);
 };
 
 #endif

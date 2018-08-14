@@ -8,15 +8,14 @@
 
 Zombie::Zombie()
 {
-	atkDie = 0;
-	defDie = 0;
-	atkNum = 0;
-	defNum = 0;
+	damage = 10;
+	range = 1;
 	shield = 0;
 	hp = 25;
 	infected = true;
 	type = "Zombie";
-	maxHp = 0;
+	letter = 'z';
+	maxHp = 25;
 	maxShield = 0;
 	maxAmmo = 0;
 	minHp = 0;
