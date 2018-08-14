@@ -18,6 +18,7 @@ class Character
 		int hp; // hit points
 		bool infected; // true if infected false otherwise
 		std::string type; // used for character name
+		char letter;
 		int maxHp;
 		int maxShield;
 		int maxAmmo;
@@ -36,6 +37,7 @@ class Character
 		void setHp(int);
 		int getHp();
 		std::string getType(); // returns type
+		char getLetter();
 		int getMaxHp();
 		int getMaxShield();
 };

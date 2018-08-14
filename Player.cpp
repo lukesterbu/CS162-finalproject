@@ -4,18 +4,17 @@
 ** Description:	Player class declaration
 **********************************************************************/
 
-#include "Character.hpp"
+#include "Player.hpp"
 
 Player::Player()
 {
-	atkDie = 0;
-	defDie = 0;
-	atkNum = 0;
-	defNum = 0;
+	damage = 5;
+	range = 1;
 	shield = 0;
 	hp = 100;
 	infected = false;
 	type = "Player";
+	letter = '*';
 	maxHp = 100;
 	maxShield = 100;
 	maxAmmo = 1000;
@@ -27,4 +26,10 @@ Player::Player()
 Player::~Player()
 {
 
+}
+
+// maybe pass board object here
+void Player::move()
+{
+	
 }

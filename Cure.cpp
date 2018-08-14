@@ -13,7 +13,7 @@ Cure::Cure()
 
 Cure::~Cure()
 {
-	delete (*this);
+	delete this;
 }
 
 void Cure::use(Character* person)

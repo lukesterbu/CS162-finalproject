@@ -14,15 +14,15 @@ Shield::Shield()
 
 Shield::~Shield()
 {
-	delete (*this);
+	delete this;
 }
 // Uses a shield to increase character's shield
 void Shield::use(Character* person)
 {
-	int currentShield = person.getShield();
+	int currentShield = person->getShield();
 	
-	if ((currentShield + shield) >= person.getMaxShield())
-		person->setShield(person.getMaxShield());
+	if ((currentShield + shield) >= person->getMaxShield())
+		person->setShield(person->getMaxShield());
 	else
 		person->setShield(currentShield + shield);
 }

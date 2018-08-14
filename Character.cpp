@@ -16,6 +16,7 @@ Character::Character()
 	hp = 0;
 	infected = false;
 	type = "Character";
+	letter = ' ';
 	maxHp = 0;
 	maxShield = 0;
 	maxAmmo = 0;
@@ -48,7 +49,7 @@ int Character::defense(int attack)
 	setHp(hp - overShield);
 }
 
-int Character::move()
+void Character::move()
 {
 	
 }
@@ -92,6 +93,11 @@ int Character::getHp()
 string Character::getType()
 {
 	return type;
+}
+
+char Character::getLetter()
+{
+	return letter;
 }
 
 int Character::getMaxHp()
