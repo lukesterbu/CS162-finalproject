@@ -24,7 +24,7 @@ using std::endl;
 
 Map::Map()
 {
-	srand(time(0));
+	srand(time(0)); // used for random functions
 	days = 20;
 	rows = 3;
 	cols = 3;
