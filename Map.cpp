@@ -7,7 +7,7 @@
 #include "Map.hpp"
 #include "Space.hpp"
 #include "Ocean.hpp"
-#include "CureSpace.hpp"
+#include "Desert.hpp"
 #include "City.hpp"
 #include "Jungle.hpp"
 #include "inputValidation.hpp"
