@@ -82,38 +82,122 @@ Character* Player::move(Character*** board, int rows, int cols)
 	// Up
 	if (direction == 1 && moveRow >= 1)	
 	{
-		moveRow--;
-		board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
-		delete board[moveRow + 1][moveCol];
-		board[moveRow + 1][moveCol] = new Character();
-		return board[moveRow][moveCol];
+		// move
+		if (board[moveRow - 1][moveCol].getLetter() != "z")
+		{
+			moveRow--;
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			delete board[moveRow + 1][moveCol];
+			board[moveRow + 1][moveCol] = new Character();
+			return board[moveRow][moveCol];
+		}
+		// attack
+		else if (board[moveRow - 1][moveCol].getLetter() == "z")
+		{
+			// player attacks zombie
+			board[moveRow][moveCol]->attack(board[moveRow - 1][moveCol]);
+			// zombie attacks player
+			board[moveRow - 1][moveCol]->attack(board[moveRow][moveCol]);
+			// check to see if zombie died
+			// Map checks to see if player died
+			if (board[moveRow - 1][moveCol].getHp() == 0)
+			{
+				delete board[moveRow - 1][movCol];
+				board[moveRow - 1][moveCol] = new Character();
+			}
+			// need to make sure damage carries over
+			return board[moveRow][moveCol];
+		}
 	}
 	// Down
 	else if (direction == 2 && moveRow < (rows - 1))
 	{
-		moveRow++;
-		board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
-		delete board[moveRow - 1][moveCol];
-		board[moveRow - 1][moveCol] = new Character();
-		return board[moveRow][moveCol];
+		// move
+		if (board[moveRow + 1][moveCol].getLetter() != "z")
+		{	
+			moveRow++;
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			delete board[moveRow - 1][moveCol];
+			board[moveRow - 1][moveCol] = new Character();
+			return board[moveRow][moveCol];
+		}
+		// attack
+		else if (board[moveRow + 1][moveCol].getLetter() == "z")
+		{
+			// player attacks zombie
+			board[moveRow][moveCol]->attack(board[moveRow + 1][moveCol]);
+			// zombie attacks player
+			board[moveRow + 1][moveCol]->attack(board[moveRow][moveCol]);
+			// check to see if zombie died
+			// Map checks to see if player died
+			if (board[moveRow + 1][moveCol].getHp() == 0)
+			{
+				delete board[moveRow + 1][movCol];
+				board[moveRow + 1][moveCol] = new Character();
+			}
+			// need to make sure damage carries over
+			return board[moveRow][moveCol];
+		}
 	}
 	// Left
 	else if (direction == 3 && moveCol >= 1)
 	{	
-		moveCol--;
-		board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
-		delete board[moveRow][moveCol + 1];
-		board[moveRow][moveCol + 1] = new Character();
-		return board[moveRow][moveCol];
+		// move
+		if (board[moveRow][moveCol - 1].getLetter() != "z")
+		{
+			moveCol--;
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			delete board[moveRow][moveCol + 1];
+			board[moveRow][moveCol + 1] = new Character();
+			return board[moveRow][moveCol];
+		}
+		// attack
+		else if (board[moveRow][moveCol - 1].getLetter() == "z")
+		{
+			// player attacks zombie
+			board[moveRow][moveCol]->attack(board[moveRow][moveCol - 1]);
+			// zombie attacks player
+			board[moveRow][moveCol - 1]->attack(board[moveRow][moveCol]);
+			// check to see if zombie died
+			// Map checks to see if player died
+			if (board[moveRow][moveCol - 1].getHp() <= 0)
+			{
+				delete board[moveRow][movCol - 1];
+				board[moveRow][moveCol - 1] = new Character();
+			}
+			// need to make sure damage carries over
+			return board[moveRow][moveCol];
+		}
 	}
 	// Right
 	else if (direction == 4 && moveCol < (cols - 1))
 	{	
-		moveCol++;
-		board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
-		delete board[moveRow][moveCol - 1];
-		board[moveRow][moveCol - 1] = new Character();
-		return board[moveRow][moveCol];
+		// move
+		if (board[moveRow][moveCol + 1].getLetter() != "z")
+		{	
+			moveCol++;
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			delete board[moveRow][moveCol - 1];
+			board[moveRow][moveCol - 1] = new Character();
+			return board[moveRow][moveCol];
+		}
+		// attack
+		else if (board[moveRow][moveCol + 1].getLetter() == "z")
+		{
+			// player attacks zombie
+			board[moveRow][moveCol]->attack(board[moveRow][moveCol + 1]);
+			// zombie attacks player
+			board[moveRow][moveCol + 1]->attack(board[moveRow][moveCol]);
+			// check to see if zombie died
+			// Map checks to see if player died
+			if (board[moveRow][moveCol + 1].getHp() <= 0)
+			{
+				delete board[moveRow][movCol + 1];
+				board[moveRow][moveCol + 1] = new Character();
+			}
+			// need to make sure damage carries over
+			return board[moveRow][moveCol];
+		}
 	}
 	// return starting position otherwise
 	else
