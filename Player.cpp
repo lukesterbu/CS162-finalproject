@@ -15,7 +15,7 @@ using std::vector;
 
 Player::Player(int row, int col)
 {
-	damage = 5;
+	damage = 15;
 	shield = 0;
 	hp = 100;
 
