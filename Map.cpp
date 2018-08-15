@@ -7,7 +7,7 @@
 #include "Map.hpp"
 #include "Space.hpp"
 #include "Ocean.hpp"
-#include "Desert.hpp"
+#include "CureSpace.hpp"
 #include "City.hpp"
 #include "Jungle.hpp"
 #include "inputValidation.hpp"
@@ -15,13 +15,16 @@
 #include "Player.hpp"
 #include "Zombie.hpp"
 
-#include <iostream>
+#include <iostream> // i/o
+#include <cstdlib> // random
+#include <ctime> // time
 
 using std::cout;
 using std::endl;
 
 Map::Map()
 {
+	srand(time(0));
 	days = 20;
 	rows = 3;
 	cols = 3;
@@ -45,6 +48,10 @@ Map::Map()
 			spaceBoard[row][col] = temp;
 		}
 	}
+	// make a random space have the Cure
+	spaceBoard[(rand() % (rows - 0 + 1) + 0)]
+	[(rand() % (cols - 0 + 1) + 0)] = new CureSpace;
+	
 	// Create the character Board
 	charBoard = new Character**[rows];
 	for (int row = 0; row < rows; row++)
