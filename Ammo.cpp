@@ -16,7 +16,7 @@ Ammo::~Ammo()
 	delete this;
 }
 
-void Ammo::use(Character* person)
+bool Ammo::use(Character* person)
 {
 	
 }

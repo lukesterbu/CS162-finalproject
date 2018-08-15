@@ -20,7 +20,7 @@ Gun::~Gun()
 	delete this;
 }
 
-void Gun::use(Character* person)
+bool Gun::use(Character* person)
 {
 	person->setDamage(gunDmg);	
 }

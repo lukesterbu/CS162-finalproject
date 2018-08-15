@@ -23,11 +23,13 @@ class Map
 		int cols;
 		Space*** spaceBoard;
 		Character*** charBoard;
+		Character* player;
 	public:
 		Map();
 		~Map();
 		void startGame();
 		void userInput();
+		void triggerEvent();
 		void printMap();
 };
 

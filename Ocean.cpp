@@ -16,7 +16,7 @@ Ocean::~Ocean()
 
 }
 
-void Ocean::event()
+void Ocean::event(Character* player)
 {
 
 }

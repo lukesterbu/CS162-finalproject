@@ -15,7 +15,7 @@ class City : public Space
 	public:
 		City();
 		~City();
-		void event();
+		void event(Character*);
 };
 
 #endif

@@ -13,6 +13,7 @@ Space::Space()
 	right = nullptr;
 	bottom = nullptr;
 	letter = ' ';
+	events = 0;
 }
 
 Space::~Space()

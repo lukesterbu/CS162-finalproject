@@ -18,7 +18,7 @@ class Gun : public Items
 	public:
 		Gun();
 		~Gun();
-		void use(Character*);
+		bool use(Character*);
 };
 
 #endif

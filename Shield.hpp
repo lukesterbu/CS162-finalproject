@@ -17,7 +17,7 @@ class Shield : public Items
 	public:
 		Shield();
 		~Shield();
-		void use(Character*);
+		bool use(Character*);
 };
 
 #endif

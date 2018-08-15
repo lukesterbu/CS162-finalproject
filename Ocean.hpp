@@ -15,7 +15,7 @@ class Ocean : public Space
 	public:
 		Ocean();
 		~Ocean();
-		void event();
+		void event(Character*);
 };
 
 #endif

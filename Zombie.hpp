@@ -14,6 +14,7 @@ class Zombie : public Character
 	public:
 		Zombie();
 		~Zombie();
+		//Character* move(Character***, int, int);
 };
 
 #endif

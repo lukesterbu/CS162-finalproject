@@ -15,11 +15,16 @@
 class Player : public Character
 {
 	private:
-		std::vector<Items*> backpack;
+		int bagSize; // max size of bag
+		std::vector<Items*> bag; // holds items
 	public:
-		Player();
+		Player(int, int);
+		Player(int, int, std::vector<Items*>);
 		~Player();
-		void move();
+		Character* move(Character***, int, int);
+		void addToBag(Items*); // add items to bag
+		bool isBagFull(); // checks if bag is full
+		void openBag(); // view bag
 };
 
 #endif

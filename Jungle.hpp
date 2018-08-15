@@ -15,7 +15,7 @@ class Jungle : public Space
 	public:
 		Jungle();
 		~Jungle();
-		void event();
+		void event(Character*);
 };
 
 #endif
