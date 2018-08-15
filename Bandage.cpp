@@ -6,6 +6,11 @@
 
 #include "Bandage.hpp"
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
 Bandage::Bandage()
 {
 	type = "Bandage";
@@ -17,12 +22,25 @@ Bandage::~Bandage()
 	delete this;
 }
 // Uses a bandage to increase character's health
-void Bandage::use(Character* person)
+// Returns true if able to use
+bool Bandage::use(Character* person)
 {
 	int currentHp = person->getHp();
 	
-	if ((currentHp + bandage) >= person->getMaxHp())
+	if (currentHp >= person->getMaxHp())
+	{
+		cout << "Your health was already full!" << endl;
+		return false;
+	}
+	else if ((currentHp + bandage) >= person->getMaxHp())
+	{
 		person->setHp(person->getMaxHp());
+		cout << "Your health is now full!" << endl;
+		return true;
+	}
 	else
+	{	
 		person->setHp(currentHp + bandage);
+		return true;
+	}
 }

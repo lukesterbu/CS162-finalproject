@@ -25,7 +25,13 @@ Map::Map()
 	days = 20;
 	rows = 3;
 	cols = 3;
-	// 17 long and 20 wide
+	int startRow = 1; // sets player's start row
+	int startCol = 1; // sets player's start col
+
+	// Create the main player
+	player = new Player(startRow, startCol);
+
+	// Create the Biome Board
 	spaceBoard = new Space**[rows];
 	for (int row = 0; row < rows; row++)
 		spaceBoard[row] = new Space*[cols];
@@ -34,11 +40,11 @@ Map::Map()
 	{
 		for (int col = 0; col < cols; col++)
 		{
-			Space* temp = new Jungle;
+			Space* temp = new City;
 			spaceBoard[row][col] = temp;
 		}
 	}
-	
+	// Create the character Board
 	charBoard = new Character**[rows];
 	for (int row = 0; row < rows; row++)
 		charBoard[row] = new Character*[cols];
@@ -51,7 +57,8 @@ Map::Map()
 			charBoard[row][col] = temp;
 		}
 	}
-	charBoard[0][0] = new Player;
+	// Place the player on the board
+	charBoard[startRow][startCol] = player;
 }
 
 Map::~Map()
@@ -84,26 +91,41 @@ void Map::startGame()
 	cout << "either fighting or avoiding zombies. There are" << endl;
 	cout << "five items that can be used throughout the " << endl;
 	cout << "game: Bandages, Shields, Gun, Ammo, and the" << endl;
-	cout << "Cure. You start with 100 hp, 0 shields, and" << endl;
-	cout << "do 5 damage. Zombies have 25 hp and do 5 " << endl;
-	cout << "damage. The Gun will allow you to do 25 " << endl; 
-	cout << "damage. Bandages heal 15 hp and Shields add" << endl;
-	cout << "50 to your shields." << endl << endl; 
-	printMap();
-	userInput(); 
+	cout << "Cure. You can only carry 5 items (each item" << endl;
+	cout << "picked up counts as 1 of the 5). You start " << endl;
+	cout << "with 100 hp, 0 shields, and do 5 damage." << endl; 
+	cout << "Zombies have 25 hp and do 5 damage. The Gun" << endl;
+	cout << "will allow you to do 25 damage. Bandages heal" << endl;
+	cout << "15 hp and Shields add 50 to your shields." << endl << endl; 
+	
+	for (int i = 0; i < days; i++)
+	{
+		int choice = 0;
+
+		cout << "DAY " << i + 1 << endl << endl;
+		printMap(); // prints the map
+		// Inv. Mgmt or Move	
+		do
+		{
+			cout << "Choose an option:" << endl;
+			cout << "1. Inventory Management" << endl;
+			cout << "2. Move" << endl;
+			choice = inputValidation(2);
+			if (choice == 1)
+				player->openBag();
+		} while (choice == 1);
+		// Once out of while loop ask user to move
+		player = player->move(charBoard, rows, cols);
+		triggerEvent();
+	} 
 }
 
-void Map::userInput()
+void Map::triggerEvent()
 {
-	int choice = 0;
-	cout << "Choose a direction to move in:" << endl;
-	cout << "1. Up" << endl;
-	cout << "2. Left" << endl;
-	cout << "3. Right" << endl;
-	cout << "4. Down" << endl;
-	choice = inputValidation(4);
+	int x = player->getMoveRow();
+	int y = player->getMoveCol();
 
-	
+	spaceBoard[x][y]->event(player);
 }
 
 void Map::printMap()

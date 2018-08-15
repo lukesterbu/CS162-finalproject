@@ -49,10 +49,8 @@ int Character::defense(int attack)
 	setHp(hp - overShield);
 }
 
-void Character::move()
-{
-	
-}
+Character* Character::move(Character*** board, int rows, int cols)
+{}
 // used if gun is found
 void Character::setDamage(int damage)
 {
@@ -109,4 +107,22 @@ int Character::getMaxShield()
 {
 	return maxShield;
 }
-			
+
+int Character::getMoveRow()
+{
+	return moveRow;
+}
+
+int Character::getMoveCol()
+{
+	return moveCol;
+}
+
+void Character::addToBag(Items* item)
+{}
+
+bool Character::isBagFull()
+{}
+
+void Character::openBag()
+{}		

@@ -5,12 +5,11 @@
 **************************************************************/
 
 #include "Map.hpp"
-#include "Character.hpp"
 
 int main()
 {
-	Map kanto;
-	kanto.startGame();
+	Map map;
+	map.startGame();
 
 	return 0;
 }

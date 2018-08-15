@@ -7,6 +7,8 @@
 #ifndef SPACE_HPP
 #define SPACE_HPP
 
+#include "Character.hpp"
+
 class Space
 {
 	protected:
@@ -15,6 +17,7 @@ class Space
 		Space* right;
 		Space* bottom;
 		char letter;
+		int events; // 1 if event hasn't happened
 	public:
 		Space();
 		~Space();
@@ -23,7 +26,7 @@ class Space
 		void setRight(Space*);
 		void setBottom(Space*);
 		char getLetter();
-		virtual void event() = 0;
+		virtual void event(Character*) = 0;
 };
 
 #endif

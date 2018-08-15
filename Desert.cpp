@@ -16,7 +16,7 @@ Desert::~Desert()
 
 }
 
-void Desert::event()
+void Desert::event(Character* player)
 {
 
 }

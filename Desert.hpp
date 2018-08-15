@@ -15,7 +15,7 @@ class Desert : public Space
 	public:
 		Desert();
 		~Desert();
-		void event();
+		void event(Character*);
 };
 
 #endif

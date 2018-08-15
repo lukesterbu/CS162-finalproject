@@ -7,6 +7,8 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+class Items;
+
 #include <string>
 
 class Character
@@ -25,12 +27,14 @@ class Character
 		int minHp;
 		int minShield;
 		int minAmmo;
+		int moveRow; // used for movement
+		int moveCol; // used for movement
 	public:
 		Character();
 		~Character();
 		virtual int attack();
 		virtual int defense(int);
-		virtual void move();
+		virtual Character* move(Character***, int, int);
 		void setDamage(int); // used if gun is found
 		void setShield(int);
 		int getShield();
@@ -40,6 +44,11 @@ class Character
 		char getLetter();
 		int getMaxHp();
 		int getMaxShield();
+		int getMoveRow();
+		int getMoveCol();
+		virtual void addToBag(Items*); // need for Player
+		virtual bool isBagFull(); // need for Player
+		virtual void openBag(); // need for Player
 };
 
 #endif

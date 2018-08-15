@@ -16,7 +16,7 @@ Jungle::~Jungle()
 
 }
 
-void Jungle::event()
+void Jungle::event(Character* player)
 {
 
 }

@@ -7,6 +7,8 @@
 #ifndef ITEMS_HPP
 #define ITEMS_HPP
 
+class Character;
+
 #include <string>
 
 class Items
@@ -16,7 +18,7 @@ class Items
 	public:
 		Items();
 		~Items();
-		virtual void use() = 0;
+		virtual bool use(Character*) = 0;
 		std::string getType();
 };
 

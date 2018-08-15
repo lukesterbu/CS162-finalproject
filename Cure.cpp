@@ -16,7 +16,7 @@ Cure::~Cure()
 	delete this;
 }
 
-void Cure::use(Character* person)
+bool Cure::use(Character* person)
 {
 	
 }

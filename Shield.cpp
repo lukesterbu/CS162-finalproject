@@ -17,7 +17,7 @@ Shield::~Shield()
 	delete this;
 }
 // Uses a shield to increase character's shield
-void Shield::use(Character* person)
+bool Shield::use(Character* person)
 {
 	int currentShield = person->getShield();
 	

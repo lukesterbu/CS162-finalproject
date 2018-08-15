@@ -17,7 +17,7 @@ class Bandage : public Items
 	public:
 		Bandage();
 		~Bandage();
-		void use(Character*);
+		bool use(Character*);
 };
 
 #endif

@@ -16,7 +16,7 @@ class Cure : public Items
 	public:
 		Cure();
 		~Cure();
-		void use(Character*);
+		bool use(Character*);
 };
 
 #endif

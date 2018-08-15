@@ -8,7 +8,6 @@
 #define AMMO_HPP
 
 #include "Items.hpp"
-#include "Character.hpp"
 
 class Ammo : public Items
 {
@@ -16,7 +15,7 @@ class Ammo : public Items
 	public:
 		Ammo();
 		~Ammo();
-		void use(Character*);
+		bool use(Character*);
 };
 
 #endif
