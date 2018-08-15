@@ -54,7 +54,7 @@ Map::Map()
 	{
 		for (int col = 0; col < cols; col++)
 		{
-			Character* temp = new Zombie;
+			Character* temp = new Character;
 			charBoard[row][col] = temp;
 		}
 	}
