@@ -99,11 +99,15 @@ void Map::startGame()
 	cout << "will allow you to do 25 damage. Bandages heal" << endl;
 	cout << "15 hp and Shields add 50 to your shields." << endl << endl; 
 	
-	for (int i = 0; i < days; i++)
+	int day = 1;
+	
+	// checks to make sure day limit hasn't been reached
+	// checks to make sure player is still alive
+	while (day <= days && player->getHp() > 0)
 	{
 		int choice = 0;
 
-		cout << "DAY " << i + 1 << endl << endl;
+		cout << "DAY " << day << endl << endl;
 		printMap(); // prints the map
 		// Inv. Mgmt or Move	
 		do
@@ -115,10 +119,16 @@ void Map::startGame()
 			if (choice == 1)
 				player->openBag();
 		} while (choice == 1);
-		// Once out of while loop ask user to move
+		// Once out of do while loop ask user to move
 		player = player->move(charBoard, rows, cols);
 		triggerEvent();
+		day++;
 	} 
+	if (player->getHp() <= 0)
+		cout << "You died!" << endl;
+	if (day > days)
+		cout << "You ran out of time!" << endl;
+	cout << "GAME OVER" << endl;
 }
 
 void Map::triggerEvent()
