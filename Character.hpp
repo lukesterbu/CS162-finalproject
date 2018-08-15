@@ -17,7 +17,6 @@ class Character
 		int damage; // damage
 		int shield; 
 		int hp; // hit points
-		bool infected; // true if infected false otherwise
 		std::string type; // used for character name
 		char letter;
 		int maxHp;
