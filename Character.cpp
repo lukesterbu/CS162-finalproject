@@ -19,10 +19,8 @@ Character::Character()
 	letter = ' ';
 	maxHp = 0;
 	maxShield = 0;
-	maxAmmo = 0;
 	minHp = 0;
 	minShield = 0;
-	minAmmo = 0;
 }
 
 Character::~Character()
