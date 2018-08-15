@@ -16,7 +16,6 @@ using std::vector;
 Player::Player(int row, int col)
 {
 	damage = 5;
-	range = 1;
 	shield = 0;
 	hp = 100;
 
@@ -26,10 +25,8 @@ Player::Player(int row, int col)
 
 	maxHp = 100;
 	maxShield = 100;
-	maxAmmo = 1000;
 	minHp = 0;
 	minShield = 0;
-	minAmmo = 0;
 
 	moveRow = row; // used for movement
 	moveCol = col; // used for movement
