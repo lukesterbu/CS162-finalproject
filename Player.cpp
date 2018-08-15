@@ -73,7 +73,8 @@ Character* Player::move(Character*** board, int rows, int cols)
 	cout << "2. Down" << endl;
 	cout << "3. Left" << endl;
 	cout << "4. Right" << endl;
-	direction = inputValidation(4);
+	cout << "5. Stay" << endl;
+	direction = inputValidation(5);
 
 	// Up
 	if (direction == 1 && moveRow >= 1)	
@@ -194,6 +195,12 @@ Character* Player::move(Character*** board, int rows, int cols)
 			// need to make sure damage carries over
 			return board[moveRow][moveCol];
 		}
+	}
+	// stay in place
+	else if (direction == 5)
+	{
+		// make sure stuff carries over
+		return board[moveRow][moveCol];	
 	}
 	// return starting position otherwise
 	else
