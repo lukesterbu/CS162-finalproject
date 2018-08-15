@@ -50,7 +50,7 @@ Map::Map()
 	}
 	// make a random space have the Cure
 	spaceBoard[(rand() % (rows - 0 + 1) + 0)]
-	[(rand() % (cols - 0 + 1) + 0)] = new CureSpace;
+	[(rand() % (cols - 0 + 1) + 0)] = new Jungle;
 	
 	// Create the character Board
 	charBoard = new Character**[rows];
