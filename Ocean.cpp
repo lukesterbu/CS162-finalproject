@@ -4,7 +4,15 @@
 ** Description: Ocean class definition
 ******************************************************************/
 
+class Item; // forward declaration
+
+#include "Shield.hpp"
 #include "Ocean.hpp"
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 Ocean::Ocean()
 {
