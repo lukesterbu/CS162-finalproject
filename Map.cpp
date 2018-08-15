@@ -40,6 +40,7 @@ Map::Map()
 	{
 		for (int col = 0; col < cols; col++)
 		{
+			// can put ifs here to make terrain different
 			Space* temp = new City;
 			spaceBoard[row][col] = temp;
 		}
