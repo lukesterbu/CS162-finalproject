@@ -22,7 +22,7 @@ City::City()
 
 City::~City()
 {}
-
+// player finds a bandage
 void City::event(Character* player)
 {
 	// if the event hasn't happened yet and the bag isn't full
