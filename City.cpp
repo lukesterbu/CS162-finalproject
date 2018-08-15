@@ -29,7 +29,7 @@ void City::event(Character* player)
 {
 	int chance = rand() % 10 + 1; // between 1 and 10
 	
-	if (num <= 8) // 80% chance of finding a bandage
+	if (chance <= 8) // 80% chance of finding a bandage
 	{
 		// if the event hasn't happened yet and the bag isn't full
 		if (events == 1 && !(player->isBagFull()))
