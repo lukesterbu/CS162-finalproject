@@ -19,7 +19,6 @@ Player::Player(int row, int col)
 	shield = 0;
 	hp = 100;
 
-	infected = false;
 	type = "Player";
 	letter = '*';
 
@@ -42,16 +41,13 @@ Player::Player(int row, int col, vector<Items*> oldBag)
 	shield = 0;
 	hp = 100;
 
-	infected = false;
 	type = "Player";
 	letter = '*';
 
 	maxHp = 100;
 	maxShield = 100;
-	maxAmmo = 1000;
 	minHp = 0;
 	minShield = 0;
-	minAmmo = 0;
 
 	moveRow = row; // used for movement
 	moveCol = col; // used for movement
