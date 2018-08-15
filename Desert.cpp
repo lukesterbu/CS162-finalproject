@@ -15,9 +15,7 @@ Desert::Desert()
 }
 
 Desert::~Desert()
-{
-
-}
+{}
 // player loses 10 health due to heat
 void Desert::event(Character* player)
 {
