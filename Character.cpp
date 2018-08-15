@@ -13,7 +13,6 @@ Character::Character()
 	damage = 0;
 	shield = 0;
 	hp = 0;
-	infected = false;
 	type = "Character";
 	letter = ' ';
 	maxHp = 0;
@@ -25,9 +24,10 @@ Character::Character()
 Character::~Character()
 {}
 
-int Character::attack()
+int Character::attack(Character* other)
 {
-	// incorporate range and damage here
+	// calls defense function
+	other->defense(this->damage);
 }
 // Calculates damage done
 int Character::defense(int attack)
