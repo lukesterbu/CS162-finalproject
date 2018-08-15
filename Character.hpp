@@ -23,10 +23,8 @@ class Character
 		char letter;
 		int maxHp;
 		int maxShield;
-		int maxAmmo;
 		int minHp;
 		int minShield;
-		int minAmmo;
 		int moveRow; // used for movement
 		int moveCol; // used for movement
 	public:
