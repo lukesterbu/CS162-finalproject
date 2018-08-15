@@ -9,6 +9,7 @@
 Ocean::Ocean()
 {
 	letter = 'O';
+	events = 1;
 }
 
 Ocean::~Ocean()
