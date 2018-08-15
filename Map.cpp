@@ -43,9 +43,39 @@ Map::Map()
 	{
 		for (int col = 0; col < cols; col++)
 		{
-			// can put ifs here to make terrain different
-			Space* temp = new City;
+			// to make terrain random
+			int type = rand() % 3 + 1;
+			
+			if (type == 1) // city
+				Space* temp = new City;
+			else if (type == 2) // ocean
+				Space* temp = new Ocean;
+			else if (type == 3) // desert
+				Space* temp = new Desert;
 			spaceBoard[row][col] = temp;
+		}
+	}
+	// loop to link spaces
+	for (int row = 0; row < rows; row++)
+	{
+		for (int col = 0; col < cols; col++)
+		{
+			if (row >= 1) // set top
+				spaceBoard[row][col]->setTop(spaceBoard[row - 1][col]);
+			else
+				spaceBoard[row][col]->setTop(nullptr);
+			if (row < rows) // set bottom
+				spaceBoard[row][col]->setBottom(spaceBoard[row + 1][col]);
+			else
+				spaceBoard[row][col]->setBottom(nullptr);
+			if (col >= 1) // set left
+				spaceBoard[row][col]->setLeft(spaceBoard[row][col - 1]);
+			else
+				spaceBoard[row][col]->setLeft(nullptr);
+			if (col < cols) // set right
+				spaceBoard[row][col]->setRight(spaceBoard[row][col + 1]);
+			else
+				spaceBoard[row][col]->setRight(nullptr);
 		}
 	}
 	// make a random space have the Cure
