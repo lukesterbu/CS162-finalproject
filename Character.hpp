@@ -15,7 +15,6 @@ class Character
 {
 	protected:
 		int damage; // damage
-		int range; // attack range
 		int shield; 
 		int hp; // hit points
 		bool infected; // true if infected false otherwise
