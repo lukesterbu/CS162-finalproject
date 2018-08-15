@@ -9,6 +9,7 @@
 Jungle::Jungle()
 {
 	letter = 'J';
+	event = 1;
 }
 
 Jungle::~Jungle()
