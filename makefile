@@ -1,8 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11 
 #CXXFLAGS += -Wall -Wextra -pedantic -g #Optional debug flags.
-OBJECTS = Ammo.o \
-	Bandage.o \
+OBJECTS = Bandage.o \
 	Character.o \
 	City.o \
 	Cure.o \
@@ -21,9 +20,6 @@ OBJECTS = Ammo.o \
 
 finalMain: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o finalMain $(OBJECTS)
-
-Ammo.o: Ammo.cpp Ammo.hpp
-	$(CXX) $(CXXFLAGS) -c Ammo.cpp
 
 Bandage.o: Bandage.cpp Bandage.hpp
 	$(CXX) $(CXXFLAGS) -c Bandage.cpp
