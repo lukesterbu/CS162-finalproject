@@ -19,12 +19,13 @@ class Player : public Character
 		std::vector<Items*> bag; // holds items
 	public:
 		Player(int, int);
-		Player(int, int, std::vector<Items*>);
+		// moveRow, moveCol, bag, shield, hp, damage params
+		Player(int, int, std::vector<Items*>, int, int, int);
 		~Player();
 		Character* move(Character***, int, int);
 		void addToBag(Items*); // add items to bag
 		bool isBagFull(); // checks if bag is full
-		void openBag(); // view bag
+		bool openBag(); // view bag
 };
 
 #endif

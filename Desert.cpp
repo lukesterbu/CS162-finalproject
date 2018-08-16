@@ -8,6 +8,9 @@
 
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 Desert::Desert()
 {
 	letter = 'D';

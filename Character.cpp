@@ -6,6 +6,10 @@
 
 #include "Character.hpp"
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
 using std::string;
 
 Character::Character()
@@ -28,6 +32,10 @@ int Character::attack(Character* other)
 {
 	// calls defense function
 	other->defense(this->damage);
+	cout << this->type << " attacked the " << other->type 
+	<< "." << endl;
+	cout << "The " << other->type << " now has " << other->hp 
+	<< " hp." << endl;
 }
 // Calculates damage done
 int Character::defense(int attack)
@@ -54,6 +62,10 @@ void Character::setDamage(int damage)
 	this->damage = damage;
 }
 
+int Character::getDamage()
+{
+	return damage;
+}
 // Doesn't let shield go below min or above max
 void Character::setShield(int shield)
 {
@@ -121,5 +133,5 @@ void Character::addToBag(Items* item)
 bool Character::isBagFull()
 {}
 
-void Character::openBag()
+bool Character::openBag()
 {}		

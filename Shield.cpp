@@ -9,7 +9,7 @@
 Shield::Shield()
 {
 	type = "Shield";
-	shield = 50;
+	shield = 5;
 }
 
 Shield::~Shield()

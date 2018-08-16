@@ -15,7 +15,7 @@ using std::vector;
 
 Player::Player(int row, int col)
 {
-	damage = 15;
+	damage = 10;
 	shield = 0;
 	hp = 100;
 
@@ -34,12 +34,11 @@ Player::Player(int row, int col)
 	bag.resize(0);
 }
 
-Player::Player(int row, int col, vector<Items*> oldBag)
+Player::Player(int row, int col, vector<Items*> oldBag, int shield, int hp, int damage)
 {	
-	damage = 5;
-	range = 1;
-	shield = 0;
-	hp = 100;
+	this->damage = damage;
+	this->shield = shield;
+	this->hp = hp;
 
 	type = "Player";
 	letter = '*';
@@ -80,16 +79,17 @@ Character* Player::move(Character*** board, int rows, int cols)
 	if (direction == 1 && moveRow >= 1)	
 	{
 		// move
-		if (board[moveRow - 1][moveCol].getLetter() != "z")
+		if (board[moveRow - 1][moveCol]->getLetter() != 'z')
 		{
 			moveRow--;
-			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag,
+			shield, hp, damage);
 			delete board[moveRow + 1][moveCol];
 			board[moveRow + 1][moveCol] = new Character();
 			return board[moveRow][moveCol];
 		}
 		// attack
-		else if (board[moveRow - 1][moveCol].getLetter() == "z")
+		else if (board[moveRow - 1][moveCol]->getLetter() == 'z')
 		{
 			// player attacks zombie
 			board[moveRow][moveCol]->attack(board[moveRow - 1][moveCol]);
@@ -97,9 +97,9 @@ Character* Player::move(Character*** board, int rows, int cols)
 			board[moveRow - 1][moveCol]->attack(board[moveRow][moveCol]);
 			// check to see if zombie died
 			// Map checks to see if player died
-			if (board[moveRow - 1][moveCol].getHp() == 0)
+			if (board[moveRow - 1][moveCol]->getHp() == 0)
 			{
-				delete board[moveRow - 1][movCol];
+				delete board[moveRow - 1][moveCol];
 				board[moveRow - 1][moveCol] = new Character();
 			}
 			// need to make sure damage carries over
@@ -110,16 +110,17 @@ Character* Player::move(Character*** board, int rows, int cols)
 	else if (direction == 2 && moveRow < (rows - 1))
 	{
 		// move
-		if (board[moveRow + 1][moveCol].getLetter() != "z")
+		if (board[moveRow + 1][moveCol]->getLetter() != 'z')
 		{	
 			moveRow++;
-			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag,
+			shield, hp, damage);
 			delete board[moveRow - 1][moveCol];
 			board[moveRow - 1][moveCol] = new Character();
 			return board[moveRow][moveCol];
 		}
 		// attack
-		else if (board[moveRow + 1][moveCol].getLetter() == "z")
+		else if (board[moveRow + 1][moveCol]->getLetter() == 'z')
 		{
 			// player attacks zombie
 			board[moveRow][moveCol]->attack(board[moveRow + 1][moveCol]);
@@ -127,9 +128,9 @@ Character* Player::move(Character*** board, int rows, int cols)
 			board[moveRow + 1][moveCol]->attack(board[moveRow][moveCol]);
 			// check to see if zombie died
 			// Map checks to see if player died
-			if (board[moveRow + 1][moveCol].getHp() == 0)
+			if (board[moveRow + 1][moveCol]->getHp() == 0)
 			{
-				delete board[moveRow + 1][movCol];
+				delete board[moveRow + 1][moveCol];
 				board[moveRow + 1][moveCol] = new Character();
 			}
 			// need to make sure damage carries over
@@ -140,16 +141,17 @@ Character* Player::move(Character*** board, int rows, int cols)
 	else if (direction == 3 && moveCol >= 1)
 	{	
 		// move
-		if (board[moveRow][moveCol - 1].getLetter() != "z")
+		if (board[moveRow][moveCol - 1]->getLetter() != 'z')
 		{
 			moveCol--;
-			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag,
+			shield, hp, damage);
 			delete board[moveRow][moveCol + 1];
 			board[moveRow][moveCol + 1] = new Character();
 			return board[moveRow][moveCol];
 		}
 		// attack
-		else if (board[moveRow][moveCol - 1].getLetter() == "z")
+		else if (board[moveRow][moveCol - 1]->getLetter() == 'z')
 		{
 			// player attacks zombie
 			board[moveRow][moveCol]->attack(board[moveRow][moveCol - 1]);
@@ -157,9 +159,9 @@ Character* Player::move(Character*** board, int rows, int cols)
 			board[moveRow][moveCol - 1]->attack(board[moveRow][moveCol]);
 			// check to see if zombie died
 			// Map checks to see if player died
-			if (board[moveRow][moveCol - 1].getHp() <= 0)
+			if (board[moveRow][moveCol - 1]->getHp() <= 0)
 			{
-				delete board[moveRow][movCol - 1];
+				delete board[moveRow][moveCol - 1];
 				board[moveRow][moveCol - 1] = new Character();
 			}
 			// need to make sure damage carries over
@@ -170,16 +172,17 @@ Character* Player::move(Character*** board, int rows, int cols)
 	else if (direction == 4 && moveCol < (cols - 1))
 	{	
 		// move
-		if (board[moveRow][moveCol + 1].getLetter() != "z")
+		if (board[moveRow][moveCol + 1]->getLetter() != 'z')
 		{	
 			moveCol++;
-			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag);
+			board[moveRow][moveCol] = new Player(moveRow, moveCol, bag,
+			shield, hp, damage);
 			delete board[moveRow][moveCol - 1];
 			board[moveRow][moveCol - 1] = new Character();
 			return board[moveRow][moveCol];
 		}
 		// attack
-		else if (board[moveRow][moveCol + 1].getLetter() == "z")
+		else if (board[moveRow][moveCol + 1]->getLetter() == 'z')
 		{
 			// player attacks zombie
 			board[moveRow][moveCol]->attack(board[moveRow][moveCol + 1]);
@@ -187,9 +190,9 @@ Character* Player::move(Character*** board, int rows, int cols)
 			board[moveRow][moveCol + 1]->attack(board[moveRow][moveCol]);
 			// check to see if zombie died
 			// Map checks to see if player died
-			if (board[moveRow][moveCol + 1].getHp() <= 0)
+			if (board[moveRow][moveCol + 1]->getHp() <= 0)
 			{
-				delete board[moveRow][movCol + 1];
+				delete board[moveRow][moveCol + 1];
 				board[moveRow][moveCol + 1] = new Character();
 			}
 			// need to make sure damage carries over
@@ -225,9 +228,11 @@ bool Player::isBagFull()
 }
 
 // views bag so user can use an item
-void Player::openBag()
+// return true if user has the cure
+bool Player::openBag()
 {
 	int choice = 0;
+	int hasCure = false;
 
 	cout << "Choose an item to use:" << endl;
 	for (int i = 0; i < bag.size(); i++)
@@ -243,8 +248,12 @@ void Player::openBag()
 		// returns true if used
 		if (bag[choice - 1]->use(this));
 		{
+			// check to see if cure is present
+			if (bag[choice - 1]->getType() == "Cure")
+				hasCure = true;
 			// deletes the element from the vector
 			bag.erase(bag.begin() + choice - 1);	
 		}
 	}
+	return hasCure;
 }

@@ -28,10 +28,11 @@ class Character
 	public:
 		Character();
 		~Character();
-		virtual int attack();
+		virtual int attack(Character*);
 		virtual int defense(int);
 		virtual Character* move(Character***, int, int);
 		void setDamage(int); // used if gun is found
+		int getDamage();
 		void setShield(int);
 		int getShield();
 		void setHp(int);
@@ -44,7 +45,7 @@ class Character
 		int getMoveCol();
 		virtual void addToBag(Items*); // need for Player
 		virtual bool isBagFull(); // need for Player
-		virtual void openBag(); // need for Player
+		virtual bool openBag(); // need for Player
 };
 
 #endif
