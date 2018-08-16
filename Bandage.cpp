@@ -14,7 +14,7 @@ using std::endl;
 Bandage::Bandage()
 {
 	type = "Bandage";
-	bandage = 15;
+	bandage = 5;
 }
 
 Bandage::~Bandage()

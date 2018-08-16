@@ -71,7 +71,7 @@ Zombie.o: Zombie.cpp Zombie.hpp
 
 clean: 
 	clear
-	#rm finalMain
+	rm finalMain
 	rm *.o
 	ls
 

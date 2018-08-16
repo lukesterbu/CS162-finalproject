@@ -11,10 +11,13 @@ class Item; // forward declaration
 
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 Jungle::Jungle()
 {
 	letter = 'J';
-	event = 1;
+	events = 1;
 }
 
 Jungle::~Jungle()

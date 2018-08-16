@@ -8,7 +8,7 @@
 
 Zombie::Zombie()
 {
-	damage = 10;
+	damage = 15;
 	shield = 0;
 	hp = 25;
 	type = "Zombie";
